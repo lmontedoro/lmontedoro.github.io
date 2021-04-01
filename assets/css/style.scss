@@ -1,0 +1,26 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.img-circular{
+    width: 150px;
+    height: 150px;
+    background-image: url('/assets/img/author.jpg');
+    background-size: cover;
+    display: block;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    margin-bottom: 20px;
+}
+
+.post-list {
+    list-style-type: none;
+}
+
+.post-meta {
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 10px;;
+}
