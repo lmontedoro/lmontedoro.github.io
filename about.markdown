@@ -4,4 +4,6 @@ title: About Me
 permalink: /about/
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel sem vel mi venenatis pretium eu eu leo. Nam eget diam eget nibh sagittis bibendum quis ut orci. Pellentesque non sodales neque, vitae congue lacus. Phasellus placerat a velit vel varius. Praesent nulla lectus, rhoncus a arcu ut, sollicitudin sagittis mauris. Duis a dui sem. Morbi congue ac justo a sodales. Fusce imperdiet diam quis gravida tempor. Aliquam erat volutpat. Curabitur vitae lobortis odio, in finibus risus. Proin eget elit ac lectus faucibus fermentum quis at augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Ut nec dolor sem. Morbi urna libero, ullamcorper nec rhoncus vitae, dapibus mollis ligula. Suspendisse pharetra quis metus convallis vehicula. Aliquam ac eleifend leo.
+Hi, I'm Leandro Montedoro. I am currently working as a Solutions Architect.
+
+For details find me in <a href="https://www.linkedin.com/in/leandromontedoro/" target="_blank">LinkedIn</a>

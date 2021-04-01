@@ -33,6 +33,11 @@ google_analytics: G-NE6XM9SR0Z
 plugins:
   - jekyll-feed
 
+minima:
+  social_links:
+    twitter: lmontedoro
+    linkedin: leandromontedoro
+
 show_excerpts: True
 #paginate: True
 

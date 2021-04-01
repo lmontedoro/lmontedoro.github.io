@@ -24,3 +24,31 @@
     font-style: italic;
     margin-bottom: 10px;;
 }
+
+.grey {
+    color: #828282;
+  }
+  
+.svg-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    fill: currentColor;
+    padding: 0px 5px 20px 0px;
+    vertical-align: text-bottom;
+}
+
+.social-media-list {
+  list-style: none;
+  display: table;
+  margin: 0;
+  padding: 0;
+
+  li {
+    float: left;
+    a, div {
+        text-align: center;
+        box-sizing: border-box;
+      }
+  }
+}
