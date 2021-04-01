@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Blog Posts
+title: My Blog
+header: Blog Post
 ---
 
 <div class="home">
