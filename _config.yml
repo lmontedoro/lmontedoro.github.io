@@ -38,8 +38,8 @@ minima:
     twitter: lmontedoro
     linkedin: leandromontedoro
 
-show_excerpts: True
-#paginate: True
+show_excerpts: true
+future: true #https://stackoverflow.com/questions/20422279/github-pages-are-not-updating
 
 # Exclude from processing.
 # The following items will not be processed, by default.
