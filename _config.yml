@@ -21,7 +21,7 @@
 title: My Blog
 email: your-email@example.com
 description: >- 
-  A Blog about technology
+  A Blog about software development
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: xxx

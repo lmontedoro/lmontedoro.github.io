@@ -21,7 +21,9 @@ header: Blog Post
       <span class="post-meta">{{ post.date | date: date_format }}</span>
       
       {%- if site.show_excerpts -%}
+      <p>
         {{ post.excerpt }}
+      </p>
       {%- endif -%}
     </li>
     {%- endfor -%}
