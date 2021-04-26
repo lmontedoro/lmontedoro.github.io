@@ -297,5 +297,4 @@ terraform destroy --auto-approve
 
 # What’s next?
 
-<!-- Continue to [Part 2](/aws/2021/04/01/Deploying-Containers-in-AWS-Fargate-using-Terraform-Pt2.html) -->
-Part 2 Comming Soon
+Continue to [Part 2](/aws/2021/04/01/Deploying-Containers-in-AWS-Fargate-using-Terraform-Pt2.html)

@@ -10,11 +10,11 @@ categories: aws
 ## CloudWatch Logs and Roles 
 
 
-Now that we know how to execute terraform basic commands and have our project set up properly, we'll add the rest of the components 
+Now that we know how to execute terraform basic commands and have our project set up properly, we'll add the rest of the components.
 
 **main.tf**
 
-Log Group in CloudWatch so we can see a log on what is happening in our container. 
+Log Group in CloudWatch so we can see a log on what is happening in our container: 
 
 ```terraform
 # CloudWatch Log Group
@@ -57,7 +57,7 @@ data "aws_iam_policy_document" "ecstask_assume_role" {
 }
 ```
 
-We attach the AmazonECSTaskExecutionRolePolicy policy so our task can download the image from ECR and add logs into CloudWatch: 
+We attach the **AmazonECSTaskExecutionRolePolicy** policy so our task can download the image from ECR and add logs into CloudWatch: 
 * ecr:GetAuthorizationToken  
 * ecr:BatchCheckLayerAvailability  
 * ecr:GetDownloadUrlForLayer
@@ -75,7 +75,7 @@ resource "aws_iam_role_policy_attachment" "ECSTaskExecutionRolePolicy" {
 
 ## Security Group 
 
-A <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html" target="_blank">security group</a> acts as a virtual firewall for your instance to control inbound and outbound traffic. In this example we are allowing traffic (opening) Port 80, since this is the port used by our container (Apache) 
+A <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html" target="_blank">security group</a> acts as a virtual firewall for your instance to control inbound and outbound traffic. In this example we are allowing incoming traffic to **port 80**, since this is the port used by our container (Apache) 
 
 ```terraform
 # Task Security Group
@@ -106,7 +106,7 @@ resource "aws_security_group" "task-sg" {
 
 ## ECS Task Definition 
 
-The task definition describes how our task should be provisioned.
+The task definition describes how our task should be provisioned:
 
 ```terraform
 # ECS Task Definition
@@ -158,12 +158,13 @@ You can see a description of the parameters here <a href="https://docs.aws.amazo
 | 2048 (2 vCPU) | Min. 4GB and Max. 16GB, in 1GB increments
 | 4096 (4 vCPU) | Min. 8GB and Max. 30GB, in 1GB increments  
 
-  
-Fargate pricing is based on requested vCPU & memory: <a href="https://aws.amazon.com/fargate/pricing/" target="_blank">https://aws.amazon.com/fargate/pricing/</a>
+
+
+_Fargate pricing is based on requested vCPU & memory: <a href="https://aws.amazon.com/fargate/pricing/" target="_blank">https://aws.amazon.com/fargate/pricing/</a>_
 
 ## ECS Service 
 
-The service this will be our last resource for this initial version. 
+The service this will be our last resource for this initial version:
 
 ```terraform
 # ECS Service
@@ -182,7 +183,7 @@ resource "aws_ecs_service" "service" {
 }
 ```
 
-Let's run terraform again and make: 
+Let's run terraform again: 
 ```
 terraform apply --auto-approve 
 ```
@@ -206,15 +207,15 @@ If we click on our cluster, the first tab will display information about the Ser
 
 _We can see here the name of the service and the task definition being used to launch tasks._
 
-_The quantity of tasks running should be 1, since this 1 is the value assigned to "desired count" in the service._
+_The quantity of tasks running should be 1, since this 1 is the value assigned to **desired count** in the service._
 
-_If your task is not starting, see below “My task fails to start” for tips on how to troubleshoot. [TODO ADD ANCHOR TO SECTION BELOW]_
+_If your task is not starting, see below [My task fails to start](#task-fail) for tips on how to troubleshoot._
 
-Click on the service name "ecs-test-service" 
+Click on the service name **ecs-test-service**:
 
 ![ECS Sercive Detail](/assets/img/posts/ecs/ecs_servicedetail.png)
 
-Switch to the "Tasks" tab and click the task: 
+Switch to the **Tasks** tab and click the task: 
 
 
 ![ECS Task](/assets/img/posts/ecs/ecs_task.png)
@@ -231,9 +232,9 @@ We can see this by manually stopping the task:
 
 Once stopped, the service will take care of launching a new task for us. 
 
-One solution to this IP Changing problem is to use <a href="https://aws.amazon.com/blogs/aws/amazon-ecs-service-discovery/" target="_blank">Amazon ECS Service Discovery</a>, which makes it possible for an ECS service to automatically register itself with a predictable and friendly DNS name in <a href="https://aws.amazon.com/route53/" target="_blank">Amazon Route 53</a>
+One solution to this IP changing problem is to use <a href="https://aws.amazon.com/blogs/aws/amazon-ecs-service-discovery/" target="_blank">Amazon ECS Service Discovery</a>, which makes it possible for an ECS service to automatically register itself with a predictable and friendly DNS name in <a href="https://aws.amazon.com/route53/" target="_blank">Amazon Route 53</a>
 
-## My task fails to start 
+## <a id="task-fail"></a> My task fails to start 
 
 If after a couple of seconds, you don’t see the task running or constantly restarting is it possible that there is something wrong. 
 
@@ -243,7 +244,7 @@ If you see the task in the list, you can click the task to go to the details:
 
 ![ECS Troubleshoot 1](/assets/img/posts/ecs/ecs_error01.png)
 
-Alternatively, you can click on “Stopped” to see stopped tasks and click from there: 
+Alternatively, you can click on **Stopped** to see stopped tasks and click from there: 
 
 ![ECS Troubleshoot 2](/assets/img/posts/ecs/ecs_error01.png)
 
@@ -270,7 +271,7 @@ Another great place to look for errors, especially if they are related with the 
 
 ## CloudWatch Logs
 
-You can see the logs going to CloudWatch, or by expanding the container row and clicking "View logs in CloudWatch" link. 
+You can see the logs going to CloudWatch, or by expanding the container row and clicking **View logs in CloudWatch** link. 
 
 ![CloudWatch View Logs](/assets/img/posts/ecs/ecs_viewlogs.png)
 
