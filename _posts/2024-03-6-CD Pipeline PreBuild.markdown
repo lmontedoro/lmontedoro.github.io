@@ -2,9 +2,9 @@
 layout: post
 title: "CDK Pipelines - Adding a Pre-Build Step"
 header: "CDK Pipelines - Adding a Pre-Build Step"
-date: 2023-03-06 10:12:05 -0400
+date: 2024-03-06 10:12:05 -0400
 excerpt: How to insert a custom step (CodeBuildStep) between Source and Build.
-categories: aws
+categories: aws cdk
 ---
 
 ## Intro
@@ -18,9 +18,9 @@ Here's a simplified code snippet depicting how my Pipeline initially looked like
 ```python
 # Git Connection
 source_action = CodePipelineSource.connection(
-  repo_string,
-  branch=branch,
-  connection_arn=RepoConfig.REPO_CONNECTION_ARN
+    repo_string,
+    branch=branch,
+    connection_arn=RepoConfig.REPO_CONNECTION_ARN
 )
 ```
 
